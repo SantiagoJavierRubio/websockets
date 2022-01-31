@@ -1,0 +1,24 @@
+extends layout.pug 
+
+block contenido 
+    h1 Vista de productos
+    if listaDeProductos
+        table(class="table table-dark table-striped mt-4")
+            thead
+                tr
+                    th(scope="col") ID
+                    th(scope="col") Nombre
+                    th(scope="col") Precio
+                    th(scope="col") Foto
+            tbody
+                each producto in listaDeProductos 
+                    tr
+                        th(scope="row")= producto.id
+                        td= producto.title
+                        td $ #{producto.price}
+                        td
+                            img(src=producto.thumbnail alt="thumbnail" class="img-thumbnail mx-auto d-block")
+    else
+        div(class="alert alert-warning mt-4") No hay productos
+    div(class="mt-4")
+        a(href="/") Cargar productos
