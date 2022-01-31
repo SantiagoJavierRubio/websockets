@@ -17,7 +17,7 @@ app.get('/productos', (req, res) => {
     res.render('listado.pug', {listaDeProductos})
 })
 app.post('/productos', (req, res) => {
-    const nuevoProducto = productos.addProduct(req.body)
+    productos.addProduct(req.body)
     res.redirect('/')
 })
 
