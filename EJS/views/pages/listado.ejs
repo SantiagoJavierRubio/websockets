@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head'); %>
+<body>
+    <div class="container">
+        <h1>Vista de productos</h1>
+        <% if (listaDeProductos.length > 0) { %>
+            <table class="table table-dark table-striped mt-4">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Foto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% listaDeProductos.forEach((producto) => { %>
+                        <tr>
+                            <th scope="row"><%= producto.id %></th>
+                            <td><%= producto.title %></td>
+                            <td>$ <%= producto.price %></td>
+                            <td>
+                                <img src="<%= producto.thumbnail %>" alt="thumbnail" class="img-thumbnail mx-auto d-block">
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <div class="alert alert-warning mt-4">
+                No hay productos
+            </div>
+        <% }; %>
+        <div class="mt-4">
+            <a href="/">Cargar productos</a>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
