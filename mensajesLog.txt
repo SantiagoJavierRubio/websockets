@@ -1,0 +1,12 @@
+[
+  {
+    "email": "prueba123@gmail.com",
+    "message": "Hola!",
+    "date": "[2/8/2022 23:28:48]"
+  },
+  {
+    "email": "prueba456@gmail.com",
+    "message": "Qué tal?",
+    "date": "[2/8/2022 23:28:54]"
+  }
+]
